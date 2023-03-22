@@ -1,19 +1,14 @@
-package Programa;
-
 import javax.swing.JOptionPane;
 
-import Monedas.Monedas;
-import Excepciones.ErroresMoneda;
+public class ProgramaMoneda {
 
-public class Moneda {
-
-	private Monedas moneda;
+	private Divisas moneda;
 	
-	public Moneda() {
-		this.moneda = new Monedas();
+	public ProgramaMoneda() {
+		this.moneda = new Divisas();
 	}
 	
-	public double dePesoADolar(double peso) throws ErroresMoneda {
+	public double dePesoADolar(double peso) throws Errores {
 		validar(peso);
 		try {
 			return peso / moneda.getDolar();
@@ -23,7 +18,7 @@ public class Moneda {
 		}
 	}
 	
-	public double dePesoAEuro(double peso) throws ErroresMoneda {
+	public double dePesoAEuro(double peso) throws Errores {
 		validar(peso);
 		try {
 			return peso / moneda.getEuro();
@@ -33,7 +28,7 @@ public class Moneda {
 		}
 	}
 	
-	public double dePesoALibras(double peso) throws ErroresMoneda {
+	public double dePesoALibras(double peso) throws Errores {
 		validar(peso);
 		try {
 			return peso / moneda.getLibras();
@@ -43,7 +38,7 @@ public class Moneda {
 		}
 	}
 	
-	public double dePesoAYen(double peso) throws ErroresMoneda {
+	public double dePesoAYen(double peso) throws Errores {
 		validar(peso);
 		try {
 			return peso / moneda.getYen();
@@ -53,7 +48,7 @@ public class Moneda {
 		}
 	}
 	
-	public double dePesoAWon(double peso) throws ErroresMoneda {
+	public double dePesoAWon(double peso) throws Errores {
 		validar(peso);
 		try {
 			return peso / moneda.getWon();
@@ -63,7 +58,7 @@ public class Moneda {
 		}
 	}
 	
-	public double deDolarAPeso(double dolar) throws ErroresMoneda {
+	public double deDolarAPeso(double dolar) throws Errores {
 		validar(dolar);
 		try {
 			return dolar * moneda.getDolar();
@@ -73,7 +68,7 @@ public class Moneda {
 		}
 	}
 	
-	public double deEuroAPeso(double euro) throws ErroresMoneda {
+	public double deEuroAPeso(double euro) throws Errores {
 		validar(euro);
 		try {
 			return euro * moneda.getEuro();
@@ -83,7 +78,7 @@ public class Moneda {
 		}
 	}
 	
-	public double deLibrasAPeso(double libras) throws ErroresMoneda {
+	public double deLibrasAPeso(double libras) throws Errores {
 		validar(libras);
 		try {
 			return libras * moneda.getLibras();
@@ -93,7 +88,7 @@ public class Moneda {
 		}
 	}
 
-	public double deYenAPeso(double yen) throws ErroresMoneda {
+	public double deYenAPeso(double yen) throws Errores {
 		validar(yen);
 		try {
 			return yen * moneda.getYen();
@@ -103,7 +98,7 @@ public class Moneda {
 		}
 	}
 	
-	public double deWonAPeso(double won) throws ErroresMoneda {
+	public double deWonAPeso(double won) throws Errores {
 		validar(won);
 		try {
 			return won * moneda.getWon();
@@ -113,7 +108,7 @@ public class Moneda {
 		}
 	}
 
-	private void validar(double moneda) throws ErroresMoneda {
+	private void validar(double moneda) throws Errores {
 		if (moneda <= 0) {
 			JOptionPane.showMessageDialog(null, "Debés ingresar un valor mayor a 0.");
 			//throw new ErroresMoneda("Debés ingresar un valor mayor a 0");

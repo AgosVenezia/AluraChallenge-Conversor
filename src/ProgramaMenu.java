@@ -1,23 +1,19 @@
-package Programa;
-
 import java.text.DecimalFormat;
-
 import javax.swing.JOptionPane;
-import Excepciones.ErroresMoneda;
 
-public class Menu {
+public class ProgramaMenu {
 
-	private Moneda m;
-	private Temperatura t;
+	private ProgramaMoneda m;
+	private ProgramaTemperatura t;
 
-	public Menu() {
-		this.m = new Moneda();
-		this.t = new Temperatura();
+	public ProgramaMenu() {
+		this.m = new ProgramaMoneda();
+		this.t = new ProgramaTemperatura();
 	}
 	
 	DecimalFormat df = new DecimalFormat("0.00");
 	
-	public void menuSelecionConversor() throws ErroresMoneda {
+	public void menuSelecionConversor() throws Errores {
 
 		boolean flagMenu = false;
 
@@ -44,7 +40,7 @@ public class Menu {
 				}
 			}
 			
-			int respuesta = JOptionPane.showInternalConfirmDialog(null, "¿Querés continuar utilizando nuestro conversor?", 
+			int respuesta = JOptionPane.showConfirmDialog(null, "¿Querés continuar utilizando nuestro conversor?", 
 					"Conversor", JOptionPane.YES_NO_OPTION);
 			if (respuesta == 1 || respuesta == -1) {
 				JOptionPane.showMessageDialog(null, "¡Gracias por elegirnos!");
@@ -53,7 +49,7 @@ public class Menu {
 		} 
 	}
 
-	public void menuConversorMoneda() throws ErroresMoneda {
+	public void menuConversorMoneda() throws Errores {
 
 		String[] conversoresDeMonedas = { 
 				"De Peso AR a Dólar Oficial", 
@@ -130,7 +126,7 @@ public class Menu {
 		}
 	}
 	
-	public void menuConversorTemperatura() throws ErroresMoneda {
+	public void menuConversorTemperatura() throws Errores {
 		
 		String[] conversoresTemperatura = { 
 				"De Celsius a Fahrenheit", 
@@ -183,7 +179,7 @@ public class Menu {
 		}
 	}
 	
-	public double ingresoDeDato() throws ErroresMoneda {
+	public double ingresoDeDato() throws Errores {
 		
 		boolean flag = false;
 		
@@ -202,10 +198,10 @@ public class Menu {
 		return convertirADouble(cadena);
 	}
 	
-	public double convertirADouble(String numero) throws ErroresMoneda {
+	public double convertirADouble(String numero) throws Errores {
 		try {
 			if (numero == null || numero.isEmpty()) {
-				throw new ErroresMoneda("Debés ingresar un valor para continuar.");
+				throw new Errores("Debés ingresar un valor para continuar.");
 			}
 			
 			double decimal = Double.parseDouble(numero);

@@ -1,6 +1,4 @@
-package Programa;
-
-public class Temperatura {
+public class ProgramaTemperatura {
 	
 	public double deCelsiusAFahrenheit(double temp) {
 		try {

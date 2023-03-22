@@ -1,6 +1,4 @@
-package Monedas;
-
-public class Monedas {
+public class Divisas {
 
 	private double dolar = 201.50;
 	private double euro = 216.87;
@@ -8,11 +6,11 @@ public class Monedas {
 	private double yen = 1.54;
 	private double won = 0.15;
 		
-	public Monedas() {
+	public Divisas() {
 		super();
 	}
 	
-	public Monedas(double dolar, double euro, double libras, double yen, double won) {
+	public Divisas(double dolar, double euro, double libras, double yen, double won) {
 		super();
 		this.dolar = dolar;
 		this.euro = euro;
